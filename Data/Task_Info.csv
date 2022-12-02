@@ -1,0 +1,14 @@
+Task ID,Task Name,Description,Task Status,Completion Date,Employee ID,Vehicle ID
+1,Gear Replacement,Screeching sounds while shifting gears,In Progress,2022-09-14,3,9
+2,Car Wash,Complete exterior wash,In Progress,2022-11-25,5,12
+3,Paint Correction,Wrong paint on the bumpers and bonnet,Assigned,2022-11-16,4,5
+4,Full Service,Complete general service,In Progress,2022-11-17,2,2
+5,Tyre Replacement,Tyres have exceeded life,In Progress,2022-11-23,1,6
+6,Clutch Plate Replacemt,Clutch pedal feels loose,Assigned,2022-11-20,9,10
+7,Brake Adjustment,Brakes are not firm,In Progress,2022-10-20,8,4
+8,Oil Change,Regular change,In Progress,2022-11-20,3,1
+9,Paint Correction,Paint is not polished properly,In Progress,2022-11-17,10,13
+10,Deep Clean,Interior and exterior cleaning,In Progress,2022-11-19,12,7
+11,Gear Replacement,Screeching sounds,In Progress,2022-11-18,13,11
+12,Full Service,Complete general service,Assigned,2022-11-29,5,8
+13,Oil Change,Overdue Change,In Progress,2022-11-15,7,3

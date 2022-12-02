@@ -1,0 +1,14 @@
+Vehicle ID,Company,Model,Problem,Owner ID,Employee ID
+1,Mahindra,Scorpio,Oil Change,2,6
+2,Hyundai,Tucson,Full Service,9,7
+3,Toyota,Fortuner,Oil Change,6,5
+4,Hyundai,Creta,Brake Adjustment,4,8
+5,KIA,Seltos,Paint Correction,3,4
+6,Honda,City,Tyre Replacement,11,3
+7,KIA,Sonet,Deep Clean,13,10
+8,Suzuki,Ertiga,Full Service,10,12
+9,Renault,Duster,Gear Replacement,1,11
+10,TATA ,Harrier,Clutch Replacement,5,13
+11,Audi,Q7,Gear Replacement,12,1
+12,Volkswagen,Tiguan,Car Wash,7,2
+13,Suzuki,Ciaz,Paint Correction,8,9
