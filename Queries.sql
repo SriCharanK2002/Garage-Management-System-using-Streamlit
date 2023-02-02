@@ -64,6 +64,7 @@ create table Invoice(
 	PRIMARY KEY(invoice_id)
 );
 
+/*function to get the total invoice amount given the owner_id*/
 
 delimiter $$
 create function get_invoice_amt(owner_id int)
@@ -74,12 +75,13 @@ begin
 	return amt;
 end
 $$
-
 delimiter ;
+/*Example query of the above function*/ 
 
 select Owner.name,get_invoice_amt(Invoice.customer_id) from Invoice JOIN Owner ON Invoice.customer_id = 
 Owner.owner_id;
 
+/*procedure to invoice details to load into Invoice table*/
 delimiter $$
 create procedure get_invoice(id int)
 begin
@@ -101,6 +103,7 @@ begin
 end
 $$
 
+/*trigger to invoke get_invoice procedure to load Invoice table once a task is marked as 'Completed'*/
 delimiter $$
 create trigger insert_invoice after update on Task_info for each row
 begin
@@ -174,26 +177,3 @@ select Task_info.task_id,Task_info.task_name from Task_info where Task_info.task
 
 /* find owners with a vehicle using intersect*/
 select Owner.name,Owner.phone_no from Owner inner join Vehicle where Owner.owner_id = Vehicle.owner_id
-
-
-delimiter $$
-create procedure get_invoice(id int)
-begin
-	declare amt float(2);
-	declare total_amt float(2);
-	declare customer_id int;
-	declare task_id int;
-	declare done int default 0;
-	declare c cursor for Select 
-		sum(sub_task_info.cost),sum(sub_task_info.cost)*1.18,Owner.owner_id,Task_info.task_id 
-		from sub_task_info,Owner,Task_info,vehicle where sub_task_info.task_id = Task_info.task_id and 
-		Owner.owner_id = vehicle.owner_id and Vehicle.vehicle_id = Task_info.vehicle_id and 
-		Task_info.task_id = id group by Task_info.task_id;
-		
-	open c;
-		fetch c into amt,total_amt,customer_id,task_id;
-		insert into Invoice(invoice_id,invoice_amt,total_amt,customer_id,task_id)
-		values(NULL,amt,total_amt,customer_id,task_id);
-	close c;
-end
-$$

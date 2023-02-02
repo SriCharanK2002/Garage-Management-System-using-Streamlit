@@ -1,3 +1,0 @@
-list_of_task_details = [i[0] for i in show_only_task_details()]
-    select_task_details = st.selectbox("task_details to edit details of",list_of_task_details)
-    selected_task_details = show_based_on_task_details(select_task_details)
